@@ -28,4 +28,17 @@ print("Array 4 Shape:", array4.shape)
 
 print("Broadcast of array 3 and 4", array3 * array4)
 
+# Numpy Functions 
+
+array5 = np.zeros((2,10)) # there is a simmilar ones() function
+print (array5)
+
+array6 = np.full((2,10),9)
+print (array6)
+
+array7 = np.eye(3)
+print ( array7)
+
+array8 = np.arange(0,10)
+print (array)
 
