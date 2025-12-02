@@ -18,3 +18,14 @@ print(np.floor(array2))
 # Element Wise arithmetic 
 print(array + array2)
 
+# Broadcasting 
+
+array3 = np.array([[1,2,3,4]])
+array4 = np.array([[1],[2],[3],[4]])
+
+print("Array 3 Shape:", array3.shape)
+print("Array 4 Shape:", array4.shape)
+
+print("Broadcast of array 3 and 4", array3 * array4)
+
+
