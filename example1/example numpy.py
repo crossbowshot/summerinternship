@@ -42,3 +42,7 @@ print ( array7)
 array8 = np.arange(0,10)
 print (array)
 
+# Random Numbers 
+rng = np.random.default_rng(seed=2)
+print(rng.integers(1,7, size = 2))
+
