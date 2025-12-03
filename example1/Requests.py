@@ -15,4 +15,3 @@ response3 = requests.get("https://httpbin.org/image",
 
 with open("myimage.png","wb")
 
-
