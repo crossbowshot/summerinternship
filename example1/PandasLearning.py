@@ -1,6 +1,13 @@
 import xarray as xr
+import matplotlib.pyplot as plt
 
-ds = xr.open_dataset("sresa1b_ncar_ccsm3-example.nc")
+# dimension = ds.dims
+# tempdata = ds.data_vars["tas"].values
 # print(ds)
+# print (dimension)
+# print(tempdata)
+# print(ds.tas)
+ds = xr.open_dataset("sresa1b_ncar_ccsm3-example.nc")
 
-print(ds.tas)
+ds['tas'].plot() 
+plt.show()
