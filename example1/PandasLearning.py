@@ -7,14 +7,20 @@ from matplotlib.widgets import Slider
 ds = xr.open_dataset("sresa1b_ncar_ccsm3-example.nc")
 # tempdata = ds.data_vars["tas"].values
 
-
 # Plot outline of world map
 fig = plt.figure(figsize=(10,5))
 ax = plt.axes(projection=ccrs.PlateCarree())
 ax.coastlines()
 
+# Plot initial Data
+data_pressurelvl = ds.sel(
+    plev = 1000
+    )
+data_pressurelvl["ua"].plot(ax=ax)
+
 # Slider
 ax_slide = plt.axes([0.12,0.08,0.65,0.03]) # xpostion, yposition, width, height 
+
 # Properties of slider
 s_factor = Slider(
     ax_slide, "Pressure level", valmin = 1000, valmax= 10000, valinit= 1000, valstep= 1000
@@ -28,6 +34,7 @@ def update(val):
     data_pressurelvl = ds.sel(
         plev = pressurelvl
         )
+    
     # Plot Eastward wind values 
     data_pressurelvl["ua"].plot(ax=ax)
     fig.canvas.draw()
