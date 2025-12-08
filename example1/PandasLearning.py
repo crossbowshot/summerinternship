@@ -16,7 +16,7 @@ ax.coastlines()
 data_pressurelvl = ds.sel(
     plev = 1000
     )
-data_pressurelvl["ua"].plot(ax=ax)
+Data = data_pressurelvl["ua"].plot(ax=ax)
 
 # Slider
 ax_slide = plt.axes([0.12,0.08,0.65,0.03]) # xpostion, yposition, width, height 
@@ -30,14 +30,13 @@ s_factor = Slider(
 def update(val):
     pressurelvl = s_factor.val
 
+    data_pressurelvl = ds.sel(plev=pressurelvl)
+
     # UPDATING Pressure level
-    data_pressurelvl = ds.sel(
-        plev = pressurelvl
-        )
+    Data.set_array(data_pressurelvl["ua"].values.flatten())
     
     # Plot Eastward wind values 
-    data_pressurelvl["ua"].plot(ax=ax)
-    fig.canvas.draw()
+    fig.canvas.draw_idle()
 
 
 s_factor.on_changed(update)
