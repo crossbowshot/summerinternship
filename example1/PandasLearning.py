@@ -36,7 +36,6 @@ cbar.set_label(
 cbar.set_ticks([
     60, 40, 20, 0, -20, - 40, -60, 
     ])
-# ([60, 40, 20, 0, -20, - 40, -60, ])
 
 # Slider
 ax_slide = plt.axes([
