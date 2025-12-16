@@ -1,4 +1,5 @@
 import mysql.connector 
+import PandasLearning
 
 conn = mysql.connector.connect(
     host="localhost",
@@ -22,8 +23,7 @@ if Initalinput == "1":
     exists = mycursor.fetchone() is not None
     if exists:
         print("congrats this exists ")
-        # take to data model 
-        pass
+        PandasLearning.climate_datamodel()
     else:
         print("Password or user is incorrect or does not exist")
         
