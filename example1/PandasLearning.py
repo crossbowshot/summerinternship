@@ -2,6 +2,7 @@ import xarray as xr
 from matplotlib.widgets import Slider
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
+
 def climate_datamodel():
     # Load dataset
     ds = xr.open_dataset(
